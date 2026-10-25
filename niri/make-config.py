@@ -12,7 +12,6 @@ def sub(pattern, repl, flags=0):
 
 sub(r'spawn-at-startup "waybar"',
     'spawn-at-startup "swaybg" "-c" "#DDE2E6"\n'
-    'spawn-at-startup "mako"\n'
     'spawn-at-startup "sh" "-c" "mkdir -p ~/.cache/niri-mist && exec qs -p ~/.config/quickshell/mist > ~/.cache/niri-mist/qs.log 2>&1"')
 sub(r'gaps 16', 'gaps 14')
 sub(r'active-color "#7fc8ff"', 'active-color "#101418"')
