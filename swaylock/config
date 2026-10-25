@@ -1,0 +1,17 @@
+color=DDE2E6
+font=Hanken Grotesk
+indicator-radius=90
+indicator-thickness=6
+inside-color=F6F8F9
+inside-clear-color=F6F8F9
+inside-ver-color=F6F8F9
+inside-wrong-color=F6F8F9
+ring-color=C6CFD6
+ring-clear-color=7C8A97
+ring-ver-color=4A5764
+ring-wrong-color=101418
+key-hl-color=101418
+bs-hl-color=4A5764
+line-color=00000000
+separator-color=00000000
+text-color=101418

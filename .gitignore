@@ -1,0 +1,5 @@
+src/
+test/
+session/niri-mist.desktop
+niri/config.kdl
+*.log

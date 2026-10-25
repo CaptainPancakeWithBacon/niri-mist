@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Niri (Mist)
+Comment=niri with the Mist shell
+Exec=@HOME@/.local/bin/niri-mist-session
+Type=Application
+DesktopNames=niri

@@ -1,0 +1,22 @@
+#!/bin/sh
+# Login entry for the niri + Mist session. GNOME stays untouched.
+# niri must run as niri.service so graphical-session.target is active; without it
+# xdg-desktop-portal-gnome fails its dependency and every portal call times out.
+export PATH="$HOME/.local/bin:$PATH"
+export XDG_CURRENT_DESKTOP=niri
+export XDG_SESSION_TYPE=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+if systemctl --user -q is-active niri.service; then
+    echo 'A niri session is already running.'
+    exit 1
+fi
+
+systemctl --user reset-failed
+systemctl --user import-environment
+dbus-update-activation-environment --all
+systemctl --user --wait start niri.service
+systemctl --user start --job-mode=replace-irreversibly niri-shutdown.target
+systemctl --user unset-environment WAYLAND_DISPLAY DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP NIRI_SOCKET
